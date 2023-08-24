@@ -7,11 +7,11 @@ const thoughtSchema = new mongoose.Schema({
     reactions: [ reactionSchema ]
 })
 
-const Thoughts = mongoose.model('Thoughts', thoughtSchema);
+const Thought = mongoose.model('Thought', thoughtSchema);
 
 const handleError = (err) => console.error(err);
 
-Thoughts
+Thought
     .create({
         thoughtText: 'So true! They are adorable',
         username: 'jimmy',
@@ -19,4 +19,4 @@ Thoughts
     .then(result => console.log('Created new thoughts', result))
     .catch(err => handleError(err));
 
-module.exports = Thoughts;
+module.exports = Thought;
